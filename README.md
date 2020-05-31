@@ -1,0 +1,1 @@
+this is a simple storage contract. Used to learn contract.sol implementation 
