@@ -26,10 +26,10 @@ const initWeb3 = () => {
 };
 
 const initContract = () => {
-  const dK = Object.keys(AdvancedStorage.networks)[0];
+  const deploymentKey = Object.keys(AdvancedStorage.networks)[0];
   return new web3.eth.Contract(
     AdvancedStorage.abi,
-    AdvancedStorage.networks[dK].address
+    AdvancedStorage.networks[deploymentKey].address
   );
 };
 
@@ -54,7 +54,7 @@ const initApp = () => {
     advancedStorage.methods
       .add(data)
       .send({ from: accounts[0] })
-      .then(() => {
+      .then((result) => {
         return advancedStorage.methods.getAll().call();
       })
       .then((result) => {
